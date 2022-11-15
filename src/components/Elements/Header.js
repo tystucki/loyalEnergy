@@ -3,37 +3,46 @@ import styled from 'styled-components'
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import PhoneIcon from '@mui/icons-material/Phone';
-import { selectCars } from '../features/car/carSlice';
-import { useSelector } from "react-redux"
+import { selectNavOptions } from '../navSlice';
+import { useSelector } from "react-redux";
+import { Link } from 'react-router-dom';
+
 
 function Header() {
     const [burgerStatus, setBurgerStatus] = useState(false);
-    const cars = useSelector(selectCars)
+    const navOptions = useSelector(selectNavOptions)
 
   return (
     <Container>
-        <a>
-            <img src='/images/logo.png' alt='' />
-        </a>
+        <Link to='/'>
+        <img src='/images/logo.png' alt='' />
+        </Link>
+
         <Menu>
-            {cars && cars.map((car, index) => (
-                <a key={index} href='#'>{car}</a>
-            ))}
+            <h2>What</h2>
+            <h2>Why</h2>
+            <h2>How</h2>
+        {/* {navOptions && navOptions.map((nav, index) => (
+                <h2 key={index}>{nav}</h2>))} */}
         </Menu>
-        <CallButton> <PhoneIcon />
-            888.5050.4433</CallButton>
-        <RightMenu>
-        <a href='#'>Login</a>
-            <CustomMenu onClick={() => setBurgerStatus(true)} />
-        </RightMenu>
+
+        <CallButton><PhoneIcon />888.5050.4433</CallButton>
+            <RightMenu>
+                <CustomMenu onClick={() => setBurgerStatus(true)} />
+             </RightMenu>
+        
         <BurgerNav show={burgerStatus}>
             <CloseWrapper>
                 <CustomClose onClick={() => setBurgerStatus(false)} />
             </CloseWrapper>
-            {cars && cars.map((car, index) => (
-                <li key={index}><a href='#'>{car}</a></li>
-            ))}
-            <li><a href='#'>Shop</a></li>
+            {/* {navOptions && navOptions.map((nav, index) => (
+                <li key={index}>{nav}</li>
+            ))} */}
+            <Link to='/calendar'><li>Calendar</li></Link>
+            <Link to='/competitions'><li>Competitions</li></Link>
+            <Link to='/shop'><li>Shop</li></Link>
+            <Link to='/trainings'><li>Trainings</li></Link>
+
 
         </BurgerNav>
     </Container>
@@ -66,12 +75,14 @@ const Menu = styled.div`
     justify-content: center;
     flex: 1;
     
-    a {
+    h2 {
         font-weight: 800;
+        cursor: pointer;
         text-transform: uppercase;
         padding: 0 10px;
         flex-wrap: no-wrap;
         color: #000;
+        font-size: 16px
     }
 
     @media(max-width: 768px) {

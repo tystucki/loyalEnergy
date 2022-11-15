@@ -1,40 +1,52 @@
 import React from 'react'
 import styled from 'styled-components'
-import Section from './Section'
+import Section from '../Elements/Section'
+import Header from '../Elements/Header'
+import Footer from '../Elements/Footer'
+
 
 function Home() {
   return (
+    
     <Container>
+        <Header />
         <Section 
-            title="The Best In Residential Solar"
+            title="CULTURES BACK"
             description=""
             backgroundImg="solar-panel.jpg"
-            leftBtnText="Free Quote" 
+            leftBtnText="" 
             rightBtnText=""
         />
         <Section
-            title="Own Your Power"
-            description="Quit renting dirty, expensive energy from the power company. Own your power and save."
+            title="#1 SWAG IN THE INDUSTRY"
+            description=""
             backgroundImg="solar-roof.jpg"
-            leftBtnText="Learn More"
+            leftBtnText=""
             rightBtnText=""
         />
         <Section
-            title="Zero Dollars Down"
-            description="No money out of pocket, simply switch you power bill for a cheaper one."
+            title="ALL INCLUSIVE TRIPS"
+            description=""
             backgroundImg="customer.jpg"
             leftBtnText=""
             rightBtnText=""
         />
         <Section
-            title="Choose Your Plan"
-            description="We offer all the options"
+            title="INDUSTRY LEADING SOFTWARE"
+            description=""
             backgroundImg="logo.png"
             leftBtnText="Get Started"
             rightBtnText=""
         />
 
+        {/* <Footer /> */}
+
+
+     
+
     </Container>
+
+
   )
 }
 
@@ -43,7 +55,4 @@ export default Home
 const Container = styled.div`
 height: 100vh;
 z-index: 10;
-`
-const Programs = styled.div`
-
 `

@@ -54,7 +54,7 @@ const Wrap = styled.div`
 `
 
 const ItemText = styled.div`
-    padding-top: 15vh;
+    padding-top: 18vh;
     text-align: center;
     z-index: -1;
     font-weight: 200;

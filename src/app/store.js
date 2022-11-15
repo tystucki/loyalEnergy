@@ -1,8 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-import carReducer from '../features/car/carSlice'
+import navReducer from '../components/navSlice';
 
 export const store = configureStore({
   reducer: {
-    car: carReducer
-  },
+    nav: navReducer
+  }
 });
+
+
