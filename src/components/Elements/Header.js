@@ -2,15 +2,18 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import PhoneIcon from '@mui/icons-material/Phone';
-import { selectNavOptions } from '../navSlice';
-import { useSelector } from "react-redux";
+import LocalPhoneOutlinedIcon from '@mui/icons-material/LocalPhoneOutlined';
 import { Link } from 'react-router-dom';
-
+import {useNavigate} from 'react-router-dom'
+import { useContext } from 'react'
+import AuthContext from '../../store/authContext'
 
 function Header() {
+
+    const authCtx = useContext(AuthContext)
+    const navigate = useNavigate()
+
     const [burgerStatus, setBurgerStatus] = useState(false);
-    const navOptions = useSelector(selectNavOptions)
 
   return (
     <Container>
@@ -22,28 +25,29 @@ function Header() {
             <h2>What</h2>
             <h2>Why</h2>
             <h2>How</h2>
-        {/* {navOptions && navOptions.map((nav, index) => (
-                <h2 key={index}>{nav}</h2>))} */}
+
+            <li>
+            <button className='logout-btn'
+                onClick={() => {
+                authCtx.logout()
+                navigate('/auth')
+                }}> Logout</button>
+            </li>
         </Menu>
 
-        <CallButton><PhoneIcon />888.5050.4433</CallButton>
+        <CallButton><LocalPhoneOutlinedIcon />888.5050.4433</CallButton>
             <RightMenu>
                 <CustomMenu onClick={() => setBurgerStatus(true)} />
              </RightMenu>
-        
         <BurgerNav show={burgerStatus}>
             <CloseWrapper>
                 <CustomClose onClick={() => setBurgerStatus(false)} />
             </CloseWrapper>
-            {/* {navOptions && navOptions.map((nav, index) => (
-                <li key={index}>{nav}</li>
-            ))} */}
+            <Link to='/dashboard'><li>Dashboard</li></Link>
             <Link to='/calendar'><li>Calendar</li></Link>
             <Link to='/competitions'><li>Competitions</li></Link>
-            <Link to='/shop'><li>Shop</li></Link>
+            <Link to='/products'><li>Shop</li></Link>
             <Link to='/trainings'><li>Trainings</li></Link>
-
-
         </BurgerNav>
     </Container>
   )
@@ -110,7 +114,7 @@ const BurgerNav = styled.div`
     top: 0;
     bottom: 0;
     right: 0;
-    background-color: #fff;
+    background-color: #f0f0f0;
     width: 300px;
     z-index: 16;
     list-style: none;
@@ -123,11 +127,7 @@ const BurgerNav = styled.div`
     li {
         padding: 15px 0;
         border-bottom: 1px solid rgba(0, 0, 0, .2);
-        
-        a {
-            font-weight: 600;
-
-        }
+        display: flex;
     }
 `
 

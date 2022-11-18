@@ -2,7 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import Section from '../Elements/Section'
 import Header from '../Elements/Header'
-import Footer from '../Elements/Footer'
+// import Footer from '../Elements/Footer'
+import { Link } from 'react-router-dom';
 
 
 function Home() {
@@ -10,27 +11,33 @@ function Home() {
     
     <Container>
         <Header />
+
+        <Link to='/products'>
         <Section 
             title="CULTURES BACK"
             description=""
-            backgroundImg="solar-panel.jpg"
-            leftBtnText="" 
-            rightBtnText=""
+            backgroundImg="partOne.jpeg"
+            leftBtnText="click here" 
+            rightBtnText="more info"
         />
+        <br />
+        </Link>
         <Section
-            title="#1 SWAG IN THE INDUSTRY"
+            title="No Backend Checks"
             description=""
-            backgroundImg="solar-roof.jpg"
+            backgroundImg="partTwo.jpeg"
             leftBtnText=""
             rightBtnText=""
         />
+        <br />
         <Section
-            title="ALL INCLUSIVE TRIPS"
+            title="Fastest Installs"
             description=""
-            backgroundImg="customer.jpg"
+            backgroundImg="partThree.jpeg"
             leftBtnText=""
             rightBtnText=""
         />
+        <br />
         <Section
             title="INDUSTRY LEADING SOFTWARE"
             description=""
@@ -40,10 +47,6 @@ function Home() {
         />
 
         {/* <Footer /> */}
-
-
-     
-
     </Container>
 
 
