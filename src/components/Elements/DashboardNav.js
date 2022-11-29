@@ -57,7 +57,7 @@ const DashboardNav = () => {
               <br /> Competitions
             </li>
           </Link>
-          <Link to="/usercard">
+          <Link to="/myaccount">
             <li>
               {" "}
               <SettingsIcon

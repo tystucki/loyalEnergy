@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import PeopleOutlineOutlinedIcon from "@mui/icons-material/PeopleOutlineOutlined";
-import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
+// import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import FolderOpenOutlinedIcon from "@mui/icons-material/FolderOpenOutlined";
 import axios from "axios";
 import { useState, useEffect, useContext } from "react";
@@ -58,7 +58,7 @@ function Dashboard() {
       <DashboardNav />
 
       <header>
-        <input className="searchbar" type="search" placeholder="Search" />
+        <div/>
         <div className="header-right">
           <h1>
             <span>Hey,</span> {mapUser}
@@ -79,10 +79,10 @@ function Dashboard() {
           <div className="banner">
             <h1>Welcome,{mapUser}</h1>
             <h1>{date}</h1>
-            <h4>
+            {/* <h4>
               <LocationOnOutlinedIcon style={{ fill: "white" }} /> Long Beach,
               California
-            </h4>
+            </h4> */}
           </div>
         </div>
       </Banner>
@@ -132,17 +132,6 @@ const Container = styled.div`
     margin: 25px;
   }
 
-  .searchbar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-    width: 25%;
-    border: none;
-    border-radius: 10px;
-    padding: 10px;
-  }
-
   .header-right {
     display: flex;
     align-items: center;
@@ -165,8 +154,6 @@ const Container = styled.div`
   }
 `
 const Banner = styled.div`
-  display: flex;
-  align-items: center;
   background-image: url("images/californiaBanner.jpeg");
   background-size: cover;
   background-position: center;

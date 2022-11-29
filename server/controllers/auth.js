@@ -34,6 +34,7 @@ module.exports = {
         phone,
         territory,
         role,
+        notes,
       } = req.body;
       let foundUser = await User.findOne({ where: { username } });
       if (foundUser) {
@@ -55,6 +56,7 @@ module.exports = {
           phone,
           territory,
           role,
+          notes,
         });
         let token = createToken(
           newUser.dataValues.username,

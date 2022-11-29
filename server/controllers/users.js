@@ -12,6 +12,19 @@ module.exports = {
     }
   },
 
+  getUser: async (req, res) => {
+    try {
+      const user = await User.findOne({
+        where: id = +req.params.id
+      });
+      res.status(200).send(user);
+    } catch (error) {
+      console.log("ERROR in getAllUsers");
+      console.log(error);
+      res.sendStatus(400);
+    }
+  },
+
   addUser: async (req, res) => {
     try {
       const {
@@ -27,6 +40,7 @@ module.exports = {
         admin,
         territory,
         role,
+        notes,
       } = req.body;
       await User.create({
         firstName,
@@ -41,6 +55,7 @@ module.exports = {
         admin,
         territory,
         role,
+        notes,
       });
       res.sendStatus(200);
     } catch (error) {

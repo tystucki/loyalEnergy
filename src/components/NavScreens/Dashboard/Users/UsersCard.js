@@ -1,32 +1,30 @@
-import { useState, useEffect, useContext } from "react";
-import AuthContext from "../../../../store/authContext";
-import styled from "styled-components";
-import axios from "axios";
-import DashboardNav from "../../../Elements/DashboardNav";
+import React, { useState, useEffect} from 'react'
+import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
+import styled from 'styled-components';
+// import DashboardNav from '../../../Elements/DashboardNav';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 
-const UserCard = () => {
-  const { userId } = useContext(AuthContext);
-  const [users, setUsers] = useState([]);
+const UsersCard = () => {
+  const { id } = useParams();
+  const [user, setUser] = useState({})
 
   useEffect(() => {
-    axios
-      .get("/users")
-      .then((res) => {
-        setUsers(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-        console.log(setUsers);
-      });
-  }, [userId]);
+    axios.get(`/users/${id}`)
+    .then((res) => {
+      console.log(res.data);
+      setUser(res.data)
+    });
+  }, []);
 
-  const mapUser = users
-    .filter((user) => {
-      return +user.id === +userId;
-    })
-    .map((user) => {
-      return (
-        <div className="container">
+  return (
+    <Container>
+      {/* <DashboardNav /> */}
+      <div className='backArrow'>
+        <Link to='/directory'><ArrowBackIosNewIcon /></Link>
+        </div>
+       <div className="container">
           <div className="header">
             <div className="header-left">
               <h1>
@@ -40,7 +38,7 @@ const UserCard = () => {
             <div className="header-right">
               <h1>{user.role}</h1>
               <br />
-              <p>ID: {+userId}</p>
+              <p>id: {user.id}</p>
             </div>
           </div>
           <div className="nav">
@@ -72,28 +70,25 @@ const UserCard = () => {
             </div>
           </div>
         </div>
-      );
-    });
-
-  return (
-    <Container>
-      <DashboardNav />
-      {mapUser}
     </Container>
-  );
-};
+  )
+}
 
-export default UserCard;
+export default UsersCard
+
 
 const Container = styled.div`
-  // align-items: center;
-  // align-self: center;
-  // justify-content: center;
   height: 100vh;
   width: 100%;
-  margin-left: 75px;
+  // margin-left: 75px;
   padding-top: 100px;
   background-color: #f0f0f0;
+
+  .backArrow {
+    display: flex;
+    margin-left: 125px;
+    margin-bottom: 10px;
+  }
 
   .container {
     display: flex;

@@ -8,8 +8,11 @@ import ArrowBackOutlinedIcon from "@mui/icons-material/ArrowBackOutlined";
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import CorpDirectory from "../../../Elements/CorpDirectory";
 
-const Directory = () => {
+const Directory = ({user}) => {
   let navigate = useNavigate();
+  function handleClick(id) {
+    navigate(`/user/${id}`)
+  }
   const { userId, token } = useContext(AuthContext);
   const [users, setUsers] = useState([]);
 
@@ -59,9 +62,7 @@ const Directory = () => {
         <div className="lead-role">
           <h2>{user.role}</h2>
           <button className="next">
-          <NavigateNextIcon style={{ fill: "white" }} onClick={() => {
-          navigate("");
-        }}/>
+          <NavigateNextIcon style={{ fill: "white" }} onClick={() => handleClick(user.id)} />
           </button>
         </div>
       </div>
@@ -69,6 +70,7 @@ const Directory = () => {
   });
   return mappedUsers.length >= 1 ? (
     <Container>
+      {/* <DashboardNav /> */}
       <Link to="/">
         <img src="/images/logo.png" alt="" />
       </Link>
@@ -97,6 +99,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
+  width: 100%;
   background-color: #f0f0f0;
 
   img {

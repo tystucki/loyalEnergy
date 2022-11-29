@@ -23,6 +23,7 @@ module.exports = {
     phone: DataTypes.STRING,
     territory: DataTypes.STRING,
     role: DataTypes.STRING,
+    notes: DataTypes.STRING,
     admin: {
       type: DataTypes.BOOLEAN,
       defaultValue: false,

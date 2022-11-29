@@ -4,12 +4,15 @@ import styled from "styled-components";
 import AuthContext from "../../../../store/authContext";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import ArrowBackOutlinedIcon from "@mui/icons-material/ArrowBackOutlined";
 import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import DashboardNav from "../../../Elements/DashboardNav"
 
 const Leads = () => {
   let navigate = useNavigate();
+  function handleClick(id) {
+    navigate(`/leads/${id}`)
+  }
   const { userId, token } = useContext(AuthContext);
   const [leads, setLeads] = useState([]);
 
@@ -24,22 +27,6 @@ const Leads = () => {
         console.log(setLeads);
       });
   }, [userId]);
-
-  // SETTING UP THE DELETE LEAD FUNCTIONALITY
-  const deleteLead = (id) => {
-    axios
-      .delete(`/leads/${id}`, {
-        headers: {
-          authorization: token,
-        },
-      })
-      .then((res) => {
-        setLeads(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
 
   // MAPPING THROUGH LEADS TO GET THE IMFORMATION I WANT DISPLAYED
   const mappedLeads = leads.map((lead) => {
@@ -64,10 +51,10 @@ const Leads = () => {
         </div>
         <div className="lead-useage">
           <p>{lead.useage} KWH / year</p>
-          <button className="button-delete" onClick={() => deleteLead(lead.id)}>
-            <DeleteOutlinedIcon />
-          </button>
         </div>
+        <button className="next">
+          <NavigateNextIcon style={{ fill: "white" }} onClick={() => handleClick(lead.id)} />
+          </button>
       </div>
     );
   });
@@ -111,6 +98,14 @@ const Container = styled.div`
   margin-top: 100px;
   margin-left: 125px;
   background-color: #f0f0f0;
+
+  .next {
+    background-color: #1e81b0;
+    padding: 5px 20px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 5px;
+  }
 
   img {
     position: fixed;

@@ -10,8 +10,8 @@ const cors = require("cors");
 
 const { SERVER_PORT } = process.env;
 const { register, login } = require("./controllers/auth");
-const { getAllLeads, addLead, deleteLead } = require("./controllers/leads");
-const { getAllUsers, addUser, deleteUser } = require("./controllers/users");
+const { getAllLeads, getLead, addLead, deleteLead } = require("./controllers/leads");
+const { getAllUsers, getUser, addUser, deleteUser } = require("./controllers/users");
 
 const app = express();
 
@@ -29,11 +29,13 @@ app.post("/login", login);
 
 // LEADS GET, POST AND DELETE REQUEST
 app.get("/leads", getAllLeads);
+app.get(`/leads/:id`, getLead);
 app.post("/leads", addLead);
 app.delete("/leads/:id", deleteLead);
 
 // USER GET, POST, AND DELETE REQUEST
 app.get("/users", getAllUsers);
+app.get(`/users/:id`, getUser);
 app.post("/users", addUser);
 app.delete("/users/:id", deleteUser);
 

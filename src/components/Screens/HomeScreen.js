@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import Section from "../Elements/HomeScreenSection";
 import Header from "../Elements/Header";
-// import Footer from '../Elements/Footer'
 import { Link } from "react-router-dom";
 
 function Home() {
@@ -51,7 +50,6 @@ function Home() {
         leftBtnText=""
         rightBtnText=""
       />
-      {/* <Footer /> */}
     </Container>
   );
 }

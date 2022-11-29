@@ -12,29 +12,35 @@ module.exports = {
     }
   },
 
+  getLead: async (req, res) => {
+    try {
+      const user = await Lead.findOne({
+        where: id = +req.params.id
+      });
+      res.status(200).send(user);
+    } catch (error) {
+      console.log("ERROR in getAllUsers");
+      console.log(error);
+      res.sendStatus(400);
+    }
+  },
+
   addLead: async (req, res) => {
     try {
       const {
-        firstName,
-        lastName,
-        address,
-        city,
-        state,
-        zipcode,
-        email,
-        phone,
-        useage,
+        firstName,lastName,address,city,state,
+        zipcode,email,phone,useage,income,credit,
+        spouse,lender,pool,ev,occupants,ownerage,roofage,
+        hoa,hoaName,hoaPhone,hoaEmail,hoaWebsite,hoaPresidentName,
+        comments,appointment,time
+
       } = req.body;
       await Lead.create({
-        firstName,
-        lastName,
-        address,
-        city,
-        state,
-        zipcode,
-        email,
-        phone,
-        useage,
+        firstName,lastName,address,city,state,
+        zipcode,email,phone,useage,income,credit,
+        spouse,lender,pool,ev,occupants,ownerage,roofage,
+        hoa,hoaName,hoaPhone,hoaEmail,hoaWebsite,hoaPresidentName,
+        comments,appointment,time
       });
       res.sendStatus(200);
     } catch (error) {

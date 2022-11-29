@@ -70,97 +70,45 @@ const Auth = () => {
     <Container>
       <form className="form auth-form" onSubmit={submitHandler}>
         <img src="/images/logo.png" alt="" />
-        <input
-          className="form-input"
-          type="username"
-          placeholder="username"
-          values={username}
+        <input className="form-input" type="username" placeholder="username" values={username}
           onChange={(e) => setUsername(e.target.value)}
         />
-        <input
-          className="form-input"
-          type="password"
-          placeholder="password"
-          values={password}
+        <input className="form-input" type="password" placeholder="password" values={password}
           onChange={(e) => setPassword(e.target.value)}
         />
         {register ? (
           <>
-            <input
-              className="form-input"
-              type="text"
-              placeholder="first name"
-              values={firstName}
+            <input className="form-input" type="text" placeholder="first name" values={firstName}
               onChange={(e) => setFirstName(e.target.value)}
             />
-            <input
-              className="form-input"
-              type="text"
-              placeholder="last name"
-              values={lastName}
+            <input className="form-input" type="text" placeholder="last name" values={lastName}
               onChange={(e) => setLastName(e.target.value)}
             />
-            <input
-              className="form-input"
-              type="text"
-              placeholder="dob"
-              values={dob}
+            <input className="form-input" type="text" placeholder="dob" values={dob}
               onChange={(e) => setDob(e.target.value)}
             />
-            <input
-              className="form-input"
-              type="text"
-              placeholder="address"
-              values={address}
+            <input className="form-input" type="text" placeholder="address" values={address}
               onChange={(e) => setAddress(e.target.value)}
             />
-            <input
-              className="form-input"
-              type="text"
-              placeholder="city"
-              values={city}
+            <input className="form-input"  type="text"  placeholder="city"  values={city}
               onChange={(e) => setCity(e.target.value)}
             />
-            <input
-              className="form-input"
-              type="text"
-              placeholder="state"
-              values={state}
+            <input className="form-input" type="text" placeholder="state" values={state}
               onChange={(e) => setState(e.target.value)}
             />
-            <input
-              className="form-input"
-              type="text"
-              placeholder="zipcode"
-              values={zipcode}
+            <input className="form-input" type="text" placeholder="zipcode" values={zipcode}
               onChange={(e) => setZipcode(e.target.value)}
             />
-            <input
-              className="form-input"
-              type="text"
-              placeholder="phone"
-              values={phone}
+            <input className="form-input" type="text" placeholder="phone" values={phone}
               onChange={(e) => setPhone(e.target.value)}
             />
-            <input
-              className="form-input"
-              type="text"
-              placeholder="email"
-              values={email}
+            <input className="form-input" type="text" placeholder="email" values={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-            <input
-              className="form-input"
-              type="text"
-              placeholder="Territory"
-              values={territory}
+            <input className="form-input" type="text" placeholder="Territory" values={territory}
               onChange={(e) => setTerritory(e.target.value)}
             />
-            <input
-              className="form-input"
-              type="text"
-              placeholder="Role"
-              values={role}
+            <input className="form-input" type="text" placeholder="Role" values={role}
               onChange={(e) => setRole(e.target.value)}
             />
           </>
