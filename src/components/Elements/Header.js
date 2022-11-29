@@ -58,7 +58,7 @@ export default Header;
 const Container = styled.div`
   background-color: white;
   min-height: 60px;
-  position: relative;
+  position: sticky;
   display: flex;
   align-items: center;
   justify-content: space-between;

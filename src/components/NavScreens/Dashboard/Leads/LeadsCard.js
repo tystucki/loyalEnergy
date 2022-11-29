@@ -1,10 +1,8 @@
 import React, { useState, useEffect, useContext} from 'react'
 import { useParams } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 import styled from 'styled-components';
 import AuthContext from "../../../../store/authContext";
-import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import { useNavigate } from "react-router-dom";
 import EventIcon from '@mui/icons-material/Event';
 import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
@@ -61,7 +59,7 @@ const UsersCard = () => {
               <p>id: {lead.id}</p>
             </div>
           </div>
-          <div className="nav">
+          {/* <div className="nav">
             <div className="overview">
               <h1>Overview</h1>
             </div>
@@ -74,7 +72,7 @@ const UsersCard = () => {
             <div className="files">
               <h1>Files</h1>
             </div>
-          </div>
+          </div> */}
           <div className="account-info">
             <div className="contact">
               <h2>
@@ -94,6 +92,28 @@ const UsersCard = () => {
                 </div>
             </div>
           </div>
+          <div className='electrical-info'>
+            <div className='component-header'>
+            <h1>Electrical Information</h1>
+                <button>Edit</button>
+            </div>
+            <br />
+            <div className='first-row'>
+                <div className='bill'>
+                    <h1>Average Bill</h1>
+                    <h2>${lead.bill}</h2>
+                </div>
+                <div className='useage'>
+                  <h1>Annual Useage</h1>
+                    <h2>{lead.useage} kwh</h2>
+                </div>
+                <div className=''>
+                    <h1>Main Panel Upgrade? (yes or no)</h1>
+                    <h2>{lead.mpu}</h2>
+                </div>
+            </div>
+
+          </div>
           <div className='pre-qual'>
             <div className='component-header'>
                 <h1>Prequal Information</h1>
@@ -110,7 +130,7 @@ const UsersCard = () => {
                     <h2>{lead.credit}</h2>
                 </div>
                 <div className='spouse'>
-                    <h1>Spouse Attending Appointment?</h1>
+                    <h1>Spouse Attending Appointment? (yes or no)</h1>
                     <h2>{lead.spouse}</h2>
                 </div>
             </div>
@@ -120,11 +140,11 @@ const UsersCard = () => {
                     <h2>{lead.lender}</h2>
                 </div>
                 <div className='pool'>
-                    <h1>Pool On Site?</h1>
+                    <h1>Pool On Site? (yes or no)</h1>
                     <h2>{lead.pool}</h2>
                 </div>
                 <div className='ev'>
-                    <h1>Electric Car?</h1>
+                    <h1>Electric Car? (yes or no)</h1>
                     <h2>{lead.ev}</h2>
                 </div>
             </div>
@@ -135,11 +155,11 @@ const UsersCard = () => {
                 </div>
                 <div className='homeowners-age'>
                     <h1>Estimated Homeowners Age</h1>
-                    <h2>{lead.ownerage}</h2>
+                    <h2>{lead.ownerage} years old</h2>
                 </div>
                 <div className='roof-age'>
                     <h1>Estimated Roof Age</h1>
-                    <h2>{lead.roofage}</h2>
+                    <h2>{lead.roofage} years old</h2>
                 </div>
             </div>
           </div>
@@ -150,7 +170,7 @@ const UsersCard = () => {
             </div>
             <div className='first-row'>
                 <div className='hoa'>
-                    <h1>HOA?</h1>
+                    <h1>HOA? (yes or no)</h1>
                     <h2>{lead.hoa}</h2>
                 </div>
                 <div className='hoa-name'>
@@ -175,6 +195,13 @@ const UsersCard = () => {
                     <h1>President Name</h1>
                     <h2>{lead.hoaPresidentName}</h2>
                 </div>
+            </div>
+          </div>
+          <div className='objections'>
+            <div className='component-header'>
+            <h1>Objections</h1>
+            <h2>{lead.objections}</h2>
+            <button>Add New</button>
             </div>
           </div>
           <div className='comments'>
@@ -204,7 +231,8 @@ const Container = styled.div`
   padding-top: 100px;
   background-color: #f0f0f0;
 
-  .pre-qual, .hoa-info, .comments {
+    .electrical-info, .pre-qual, .hoa-info,
+    .comments, .objections {
     display: flex;
     flex-direction: column;
     width: 80%;
@@ -351,6 +379,17 @@ const Container = styled.div`
     h1 {
         color: white;
         font-weight: 500;
+    }
+
+  }
+
+  .delete-lead {
+    border: none;
+    padding: 25px; 
+
+    button {
+      border: none;
+      cursor: pointer;
     }
   }
 `;

@@ -69,7 +69,7 @@ const Auth = () => {
   return (
     <Container>
       <form className="form auth-form" onSubmit={submitHandler}>
-        <img src="/images/logo.png" alt="" />
+        {/* <img src="/images/logo.png" alt="" /> */}
         <input className="form-input" type="username" placeholder="username" values={username}
           onChange={(e) => setUsername(e.target.value)}
         />
@@ -135,6 +135,8 @@ const Container = styled.div`
   width: 100%;
   height: 100vh;
   background-color: #272727;
+  background-image: url("images/11.png");
+  background-size: cover;
 
   form {
     display: flex;
@@ -144,12 +146,8 @@ const Container = styled.div`
     width: 350px;
     height: 800px;
     border-radius: 10px;
-    background-color: white;
-  }
-
-  img {
-    height: 135px;
-    overflow: hidden;
+    background-color: none;
+    background-repeat: none;
   }
 
   input {
@@ -186,7 +184,7 @@ const Container = styled.div`
     width: 350px;
     margin: 10px;
     border-radius: 10px;
-    background-color: white;
+    background-color: none;
   }
 
   .form-btn2 {

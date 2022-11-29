@@ -18,6 +18,8 @@ module.exports = {
     email: DataTypes.STRING,
     phone: DataTypes.STRING,
     useage: DataTypes.STRING,
+    bill: DataTypes.STRING,
+    mpu:DataTypes.STRING,
     income: DataTypes.STRING,
     credit: DataTypes.STRING,
     spouse: DataTypes.STRING,
@@ -36,5 +38,6 @@ module.exports = {
     comments: DataTypes.STRING,
     appointment: DataTypes.STRING,
     time: DataTypes.STRING,
+    objections: DataTypes.STRING,
   }),
 };

@@ -24,7 +24,7 @@ function Section({
             {rightBtnText && <RightButton>{rightBtnText}</RightButton>}
           </ButtonGroup>
         </Fade>
-        <DownArrow src="/images/down-arrow.svg" />
+        {/* <DownArrow src="/images/down-arrow.svg" /> */}
       </Buttons>
     </Wrap>
   );

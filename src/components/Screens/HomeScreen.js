@@ -10,45 +10,28 @@ function Home() {
       <Header />
 
       <Section
-        title="THE SHOW GOES ON"
-        description=""
-        backgroundImg="banner.jpeg"
-        leftBtnText=""
-        rightBtnText=""
+        backgroundImg="2.png"
       />
-
-      <Link to="/products">
-        <Section
-          title=""
-          description=""
-          backgroundImg="partOne.jpeg"
-          leftBtnText=""
-          rightBtnText=""
-        />
-        <br />
-      </Link>
       <Section
-        title=""
-        description=""
-        backgroundImg="partTwo.jpeg"
-        leftBtnText=""
-        rightBtnText=""
+        backgroundImg="3.png"
       />
-      <br />
       <Section
-        title=""
-        description=""
-        backgroundImg="partThree.jpeg"
-        leftBtnText=""
-        rightBtnText=""
+        backgroundImg="13.png"
       />
-      <br />
       <Section
-        title=""
-        description=""
-        backgroundImg="logo.png"
-        leftBtnText=""
-        rightBtnText=""
+        backgroundImg="9.png"
+      />
+      <Section
+        backgroundImg="10.png"
+      />
+      <Section
+        backgroundImg="4.png"
+      />
+       <Section
+        backgroundImg="5.png"
+      />
+       <Section
+        backgroundImg="logo2.png"
       />
     </Container>
   );
@@ -57,6 +40,7 @@ function Home() {
 export default Home;
 
 const Container = styled.div`
-  height: 100vh;
+  height: 100%;
   z-index: 10;
+  background-color: black;
 `;

@@ -24,9 +24,9 @@ const Trainings = () => {
       <Header>
         <h1>Trainings:</h1>
       </Header>
-      <Body>
-      
-      </Body>
+      <Banner>
+          
+      </Banner>
     </Container>
   );
 };
@@ -72,14 +72,18 @@ const Header = styled.div`
     font-size: 1.5rem;
   }
 `;
-
-const Body = styled.div`
+const Banner = styled.div`
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
   align-self: center;
-  background-color: white;
-  height: 100%;
+  background-image: url("images/10.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: red;
+  height: 500px;
   width: 90%;
-`
+  margin-top: 25px;
+  // border-radius: 20px;
+
+`;

@@ -19,7 +19,7 @@ const CorpDirectory = () => {
         <div className="directory-operations-creation">
           <p>Account Creation</p>
           <p>Welcome Calls, Site Survey, Change Orders and Pre-Sales Support</p>
-          <p>844 207-7320</p>
+          <p>(844) 207-7320</p>
         </div>
         <div className="directory-operations-support">
           <p>Sales Support</p>
@@ -27,12 +27,12 @@ const CorpDirectory = () => {
             Post Sale Project Related Inquiries or Request for Sales
             Representatives
           </p>
-          <p>551 454-6438</p>
+          <p>(551) 454-6438</p>
         </div>
         <div className="directory-operations-management">
           <p>Account Management</p>
           <p>All Customer Facing Inquiries and Questions</p>
-          <p>888 685-9464</p>
+          <p>(888) 685-9464</p>
         </div>
       </div>
       <div className="directory-info">

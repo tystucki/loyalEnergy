@@ -18,6 +18,8 @@ const Form = () => {
   const [useage, setUseage] = useState("");
   const [appointment, setAppointment] = useState("");
   const [time, setTime] = useState("");
+  const [bill, setBill] = useState("");
+  const [mpu, setMpu] = useState("");
   const [income, setIncome] = useState("");
   const [credit, setCredit] = useState("");
   const [spouse, setSpouse] = useState("");
@@ -34,6 +36,8 @@ const Form = () => {
   const [hoaWebsite, setHoaWebsite] = useState("");
   const [hoaPresidentName, setHoaPresidentName] = useState("");
   const [comments, setComments] = useState("");
+  const [objections, setObjections] = useState("");
+
 
 
 
@@ -43,10 +47,10 @@ const Form = () => {
     axios
       .post("/leads", {
         firstName,lastName,address,city,state,
-        zipcode,email,phone,useage,appointment,time,income,credit,
+        zipcode,email,phone,useage,appointment,time,income,bill,mpu,credit,
         spouse,lender,pool,ev,occupants,ownerage,roofage,
         hoa,hoaName,hoaPhone,hoaEmail,hoaWebsite,hoaPresidentName,
-        comments
+        comments,objections
       })
       .then(() => {
         navigate("/leads");
@@ -153,6 +157,20 @@ const Form = () => {
         </div>
         <input
             type="text"
+            placeholder="Average Bill"
+            value={bill}
+            onChange={(e) => setBill(e.target.value)}
+            className="form-input lead-useage"
+          />
+          <input
+            type="text"
+            placeholder="MPU? (yes or no)"
+            value={mpu}
+            onChange={(e) => setMpu(e.target.value)}
+            className="form-input lead-useage"
+          />
+          <input
+            type="text"
             placeholder="Annual Income"
             value={income}
             onChange={(e) => setIncome(e.target.value)}
@@ -258,6 +276,13 @@ const Form = () => {
           />
           <input
             type="text"
+            placeholder="Objections "
+            value={objections}
+            onChange={(e) => setObjections(e.target.value)}
+            className="form-input lead-useage"
+          />
+          <input
+            type="text"
             placeholder="Add a Note "
             value={comments}
             onChange={(e) => setComments(e.target.value)}
@@ -282,15 +307,20 @@ export default Form;
 const Container = styled.div`
     display: flex;
     justify-content: center;
-    // align-items: center;
+    align-self: center;
 
     .form {
-        margin-top: 10%;
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: center;
+        // align-items: center;
+        // margin-top: 10%;
+        margin-left: 75px;
         border: 1px solid black;
         border-radius: 5px;
         box-shadow: 5px 5px 20px #171717;
         width: 800px;
-        height: 600px;
+        height: 1200px;
     }
 
     .title {

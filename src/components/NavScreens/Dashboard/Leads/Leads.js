@@ -4,7 +4,6 @@ import styled from "styled-components";
 import AuthContext from "../../../../store/authContext";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import DashboardNav from "../../../Elements/DashboardNav"
 
@@ -73,7 +72,6 @@ const Leads = () => {
           navigate("/dashboard");
         }}
       >
-        {/* <ArrowBackOutlinedIcon fontSize="large" /> */}
       </div>
       <div className="searchbar">
         <div className="searchbar-left">
@@ -116,14 +114,6 @@ const Container = styled.div`
     top: 0;
     left: 0;
   }
-
-  // .backArrow {
-  //   display: flex;
-  //   margin-left: 5px;
-  //   padding: 10px;
-  //   cursor: pointer;
-  // }
-
   .searchbar {
     display: flex;
     justify-content: space-between;

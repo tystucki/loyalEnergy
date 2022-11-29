@@ -75,7 +75,6 @@ function Dashboard() {
         </div>
       </header>
       <Banner>
-        <div className="banner-gradient">
           <div className="banner">
             <h1>Welcome,{mapUser}</h1>
             <h1>{date}</h1>
@@ -84,7 +83,6 @@ function Dashboard() {
               California
             </h4> */}
           </div>
-        </div>
       </Banner>
       <SubDashboard>
         <div className="first-row">
@@ -154,10 +152,13 @@ const Container = styled.div`
   }
 `
 const Banner = styled.div`
-  background-image: url("images/californiaBanner.jpeg");
-  background-size: cover;
+  display: flex;
+  align-items: center;
+  background-image: url("images/8.png");
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+  background-color: #dadbdd;
   height: 400px;
   width: 80%;
   margin-top: 25px;
@@ -167,21 +168,8 @@ const Banner = styled.div`
   h4,
   h4 {
     margin-left: 75px;
-    color: white;
+    color: black;
     font-weight: 600;
-  }
-
-  .banner-gradient {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    border-radius: 20px;
-    background-color: rgba(0, 0, 0, 0.2);
-    background-image: linear-gradient(
-      rgba(0, 0, 0, 0.3) 100%,
-      rgba(0, 0, 0, 0) 100%
-    );
   }
 `;
 

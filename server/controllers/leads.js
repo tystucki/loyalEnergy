@@ -29,18 +29,18 @@ module.exports = {
     try {
       const {
         firstName,lastName,address,city,state,
-        zipcode,email,phone,useage,income,credit,
+        zipcode,email,phone,useage,bill,mpu,income,credit,
         spouse,lender,pool,ev,occupants,ownerage,roofage,
         hoa,hoaName,hoaPhone,hoaEmail,hoaWebsite,hoaPresidentName,
-        comments,appointment,time
+        comments,appointment,time,objections
 
       } = req.body;
       await Lead.create({
         firstName,lastName,address,city,state,
-        zipcode,email,phone,useage,income,credit,
+        zipcode,email,phone,useage,bill,mpu,income,credit,
         spouse,lender,pool,ev,occupants,ownerage,roofage,
         hoa,hoaName,hoaPhone,hoaEmail,hoaWebsite,hoaPresidentName,
-        comments,appointment,time
+        comments,appointment,time,objections,
       });
       res.sendStatus(200);
     } catch (error) {
@@ -62,4 +62,12 @@ module.exports = {
       res.sendStatus(400);
     }
   },
+
+  // editLead: async (req, res) => {
+  //   try {
+  //     const {id} = req.params
+  //     await Lead.update({where: {id: +id}})
+  //     res.sendStatus(200)
+  //   }
+  // },
 };
