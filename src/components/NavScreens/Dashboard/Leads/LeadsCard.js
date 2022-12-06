@@ -32,6 +32,7 @@ const UsersCard = () => {
         },
       })
       .then((res) => {
+        console.log(res.data)
         setLeads(res.data);
       })
       .catch((err) => {
@@ -79,7 +80,7 @@ const UsersCard = () => {
                 {lead.firstName} {lead.lastName}
               </h2>
               <br />
-              <h2>+1{lead.phone}</h2>
+              <h2>+1 {lead.phone}</h2>
               <h2>{lead.email}</h2>
             </div>
             <div className="appointment">
@@ -213,7 +214,7 @@ const UsersCard = () => {
           </div>
           <div className='delete-lead'>
             <h1>Delete Lead</h1>
-          <button className="button-delete" onClick={() => deleteLead(lead.id)} >
+          <button className="button-delete" onClick={() => deleteLead(lead.id) & navigate("/leads")} >
             <DeleteOutlinedIcon />
           </button>
           </div>
@@ -243,6 +244,7 @@ const Container = styled.div`
     border-radius: 10px;
     background-color: white;
 
+
     button {
         background-color: #1e81b0;
         color: white;
@@ -250,6 +252,13 @@ const Container = styled.div`
         padding: 10px 20px;
         border: none;
         border-radius: 10px;
+    }
+  }
+
+  .comments, .objections {
+    h2 {
+      font-size: 1rem;
+      font-weight: 500;
     }
   }
   .component-header {

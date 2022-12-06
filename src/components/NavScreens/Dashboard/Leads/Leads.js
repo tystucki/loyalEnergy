@@ -39,9 +39,9 @@ const Leads = () => {
           <h4>ID: {lead.id}</h4>
         </div>
         <div className="lead-location">
-          <h2>{lead.address}</h2>
+          <h2>{lead.address},</h2>
           <h4>
-            {lead.city} {lead.state} {lead.zipcode}
+            {lead.city}, {lead.state} {lead.zipcode}
           </h4>
         </div>
         <div className="lead-contact">

@@ -3,29 +3,45 @@ import { Grid } from "@material-ui/core";
 import Product from "./Product/Product";
 import NavBar from "../NavBar/NavBar";
 import useStyles from "./styles";
+import Banner from "../NavBar/Banner";
 
 const products = [
   {
     id: 1,
-    name: "Shirt",
-    description: "Classic LOYAL Tee",
-    price: "$15.00",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqquMetclCxB18KJm1gmAmQWGiH8GaI-8Ml2ykQVPYXjfI5DuM674O4sHtQH-zmXrQYhQ&usqp=CAU",
+    name: "Wave",
+    description: "Only 99 Made",
+    price: "$45.00",
+    image: "../../../../images/shirt3.jpeg",
   },
   {
     id: 2,
-    name: "Hoodie",
-    description: "Classic LOYAL Hoodie",
-    price: "$40.00",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEmVLTwDupGJuNN_l31PZf4HMFm2MOqCQ1c7zcvz5RZXYF9XR55usyZaqSBHl25kj5S70&usqp=CAU",
+    name: "Classic",
+    description: "Classic LOYAL Tee",
+    price: "$25.00",
+    image: "../../../../images/shirt2.jpeg",
   },
   {
     id: 3,
-    name: "Polo",
-    description: "Classic LOYAL Polo",
-    price: "$20.00",
-    image: "https://i.ebayimg.com/images/g/tr8AAOSw~rxicCyB/s-l500.jpg",
+    name: "Ride or Die ",
+    description: "Ride or Die Loyal T-Shirt",
+    price: "$35.00",
+    image: "../../../../images/shirt1.jpeg",
   },
+  {
+    id: 4,
+    name: "Jacket",
+    description: "Black windbreaker",
+    price: "$65.00",
+    image: "../../../../images/jacket1.jpeg",
+  },
+  {
+    id: 5,
+    name: "Dad Hat",
+    description: "LOYAL Dad Hat",
+    price: "$25.00",
+    image: "../../../../images/hat1.jpeg",
+  },
+  
 ];
 
 const Products = () => {
@@ -35,6 +51,7 @@ const Products = () => {
     <main className={classes.content}>
       <div className={classes.toolbar} />
       <NavBar />
+      <Banner />
       <Grid container justify="center" spacing={4}>
         {products.map((product) => (
           <Grid item key={product.id} xs={12} sm={6} md={4} lg={3}>

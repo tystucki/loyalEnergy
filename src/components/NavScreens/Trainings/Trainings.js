@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import ArrowBackOutlinedIcon from "@mui/icons-material/ArrowBackOutlined";
 import DashboardNav from "../../Elements/DashboardNav";
 import styled from "styled-components";
 
@@ -27,6 +26,17 @@ const Trainings = () => {
       <Banner>
           
       </Banner>
+      <Body>
+        <div className="row1">
+          <div>
+
+          </div>
+        </div>
+     
+      </Body>
+      <Footer>
+
+      </Footer>
     </Container>
   );
 };
@@ -80,10 +90,34 @@ const Banner = styled.div`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: red;
+  border: none;
+  border-radius: 0 0 10px 10px;
   height: 500px;
   width: 90%;
-  margin-top: 25px;
-  // border-radius: 20px;
-
 `;
+
+const Body = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  align-self: center;
+  margin-top: 15px;
+  border: none;
+  border-radius: 10px 10px 0 0;
+  width: 90%;
+  height: 500px;
+  background-color: #272727;
+
+`
+const Footer = styled.div`
+display: flex;
+justify-content: center;
+align-items: center; 
+align-self: center;
+margin-top: 15px;
+width: 90%;
+height: 100px;
+background-color: #272727;
+border: none;
+border-radius: 0 0 10px 10px;
+`

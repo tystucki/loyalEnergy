@@ -15,7 +15,7 @@ function Dashboard() {
 
   // GETTING TODAYS DATE
   const current = new Date();
-  const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
+  const date = `${current.getMonth()+1}/${current.getDate()}/${current.getFullYear()}`;
 
     // SETTING UP THE GET USERS FUNCTIONALITY
   useEffect(() => {
